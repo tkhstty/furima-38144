@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="bta5UFGAGLrSgoltflCx" name="ページ1">
-        <mxGraphModel dx="1290" dy="942" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+        <mxGraphModel dx="1097" dy="172" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -15,9 +15,6 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="79" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERzeroToMany;endFill=0;dashed=1;dashPattern=1 1;" parent="1" source="28" target="75" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
                 <mxCell id="28" value="Items" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="600" y="190" width="160" height="80" as="geometry"/>
                 </mxCell>
@@ -26,13 +23,6 @@
                         <mxPoint x="360" y="350.03999999999996" as="targetPoint"/>
                         <Array as="points">
                             <mxPoint x="200" y="350"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="80" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERzeroToMany;endFill=0;dashed=1;dashPattern=1 1;" parent="1" source="33" target="75" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="160" y="590"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -87,9 +77,6 @@
                 </mxCell>
                 <mxCell id="70" value="ActiveHash&lt;br&gt;Models" style="shape=note;size=20;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
                     <mxGeometry x="860" y="120" width="80" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="75" value="Comments" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=1;align=center;fillColor=none;dashPattern=1 1;" parent="1" vertex="1">
-                    <mxGeometry x="600" y="550" width="160" height="80" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

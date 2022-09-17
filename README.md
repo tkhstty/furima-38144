@@ -17,7 +17,6 @@
 ### Association
 - has_many :items
 - has_many :orders
-- has_many :comments
 
 ## items テーブル
 | Column               | Type        | Option                        |
@@ -30,12 +29,11 @@
 | prefecture_id        | integer     | null:false                    |
 | delivery_duration_id | integer     | null:false                    |
 | price                | integer     | null:false                    |
-| user                 | reference   | null:false, foreign_key: true |
+| user                 | references  | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
 - has_one :order
-- has_many :comments
 - belongs_to : category
 - belongs_to : condition
 - belongs_to : delivery_charge
@@ -45,8 +43,8 @@
 ## orders テーブル
 | Column              | Type        | Option                        |
 | ------------------- | ----------- | ----------------------------- |
-| user                | reference   | null:false, foreign_key: true |
-| item                | reference   | null:false, foreign_key: true |
+| user                | references  | null:false, foreign_key: true |
+| item                | references  | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -62,19 +60,8 @@
 | house_number        | string      | null:false                    |
 | building_name       | string      |                               |
 | phone_number        | string      | null:false                    |
-| order               | reference   | null:false, foreign_key: true |
+| order               | references  | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :order
 - belongs_to :prefecture
-
-## comments テーブル
-| Column              | Type        | Option                        |
-| ------------------- | ----------- | ----------------------------- |
-| content             | text        | null:false                    |
-| user                | reference   | null:false, foreign_key: true |
-| item                | reference   | null:false, foreign_key: true |
-
-### Association
-- belongs_to :user
-- belongs_to :item
