@@ -20,22 +20,27 @@
 - has_many :comments
 
 ## items テーブル
-| Column              | Type        | Option                        |
-| ------------------- | ----------- | ----------------------------- |
-| name                | string      | null:false                    |
-| description         | text        | null:false                    |
-| category            | integer     | null:false                    |
-| condition           | integer     | null:false                    |
-| delivery_charge     | integer     | null:false                    |
-| prefecture          | integer     | null:false                    |
-| delivery_duration   | integer     | null:false                    |
-| price               | integer     | null:false                    |
-| user                | reference   | null:false, foreign_key: true |
+| Column               | Type        | Option                        |
+| -------------------- | ----------- | ----------------------------- |
+| name                 | string      | null:false                    |
+| description          | text        | null:false                    |
+| category_id          | integer     | null:false                    |
+| condition_id         | integer     | null:false                    |
+| delivery_charge_id   | integer     | null:false                    |
+| prefecture_id        | integer     | null:false                    |
+| delivery_duration_id | integer     | null:false                    |
+| price                | integer     | null:false                    |
+| user                 | reference   | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
 - has_one :order
 - has_many :comments
+- belongs_to : category
+- belongs_to : condition
+- belongs_to : delivery_charge
+- belongs_to : prefecture
+- belongs_to : delivery_duration
 
 ## orders テーブル
 | Column              | Type        | Option                        |
@@ -52,7 +57,7 @@
 | Column              | Type        | Option                        |
 | ------------------- | ----------- | ----------------------------- |
 | postal_code         | string      | null:false                    |
-| prefecture          | integer     | null:false                    |
+| prefecture_id       | integer     | null:false                    |
 | city                | string      | null:false                    |
 | house_number        | string      | null:false                    |
 | building_name       | string      |                               |
@@ -61,6 +66,7 @@
 
 ### Association
 - belongs_to :order
+- belongs_to :prefecture
 
 ## comments テーブル
 | Column              | Type        | Option                        |
