@@ -11,6 +11,6 @@ class User < ApplicationRecord
     validates :last_name_reading, format: {with: /\A[ァ-ヶ]+\z/, message: "is invalid. Input with full-width katakana characters"}
     validates :first_name_reading, format: {with: /\A[ァ-ヶ]+\z/, message: "is invalid. Input with full-width katakana characters"}
     validates :birth_date
-    validates :encrypted_password, format: {with: /(?=.[a-zA-Z])(?=.\d)[a-zA-Z\d]/, message: "is invalid Input with both half-width digits and alphabets"}
+    validates :password, format: {with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{6,}\z/, message: "is invalid Input with both half-width digits and alphabets"}
   end
 end
