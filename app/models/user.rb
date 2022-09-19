@@ -17,4 +17,6 @@ class User < ApplicationRecord
   validates :password,
             format: { with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{6,}\z/,
                       message: 'is invalid. Input with both half-width digits and alphabets' }
+
+  has_many :items
 end
