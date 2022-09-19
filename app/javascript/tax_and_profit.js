@@ -3,7 +3,7 @@ function taxAndProfit() {
   price.addEventListener('input', () => {
     const tax = document.getElementById('add-tax-price')
     const profit = document.getElementById('profit')
-    tax.innerHTML = Math.trunc(price.value * 0.1)
+    tax.innerHTML = Math.floor(price.value * 0.1)
     profit.innerHTML = price.value - tax.innerHTML
   })
 }
