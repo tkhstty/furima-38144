@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    unless user_signed_in? && current_user.id == @item.user.id
+    unless user_signed_in? && current_user.id == @item.user.id && !Order.exists?(item_id: @item.id)
       redirect_to root_path
     end
   end
