@@ -19,4 +19,5 @@ class User < ApplicationRecord
                       message: 'is invalid. Input with both half-width digits and alphabets' }
 
   has_many :items
+  has_many :orders
 end
