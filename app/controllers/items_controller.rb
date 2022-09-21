@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :not_owned_item, only: [:edit, :destroy]
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -23,7 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless owned_item && !Order.exists?(item_id: @item.id)
+    redirect_to root_path if Order.exists?(item_id: @item.id)
   end
 
   def update
@@ -35,7 +36,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy if owned_item
+    @item.destroy
     redirect_to root_path
   end
 
@@ -50,7 +51,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def owned_item
-    current_user.id == @item.user.id
+  def not_owned_item
+    if current_user.id != @item.user.id
+      redirect_to root_path
+    end
   end
 end
