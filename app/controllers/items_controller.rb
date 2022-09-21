@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless user_signed_in? && current_user.id == @item.user.id && !Order.exists?(item_id: @item.id)
+    redirect_to root_path unless owned_item && !Order.exists?(item_id: @item.id)
   end
 
   def update
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy if current_user.id == @item.user.id
+    @item.destroy if owned_item
     redirect_to root_path
   end
 
@@ -48,5 +48,9 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def owned_item
+    current_user.id == @item.user.id
   end
 end
