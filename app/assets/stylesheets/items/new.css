@@ -74,10 +74,17 @@
 
 /* 商品画像 */
 .img-upload {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   padding: 2vh 0;
+}
+
+.item-image-previews {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-image-preview {
+  height: 150px;
+  width: 150px;
 }
 
 .click-upload {
