@@ -1,15 +1,15 @@
 class Item < ApplicationRecord
   with_options presence: true do
-    validates :name, length: { maximum: 40, message: 'is too long (maximum is 40 characters)' }
-    validates :description, length: { maximum: 1000, message: 'is too long (maximum is 1000 characters)' }
-    validates :category_id, numericality: { other_than: 0, message: "can't be blank" }
-    validates :condition_id, numericality: { other_than: 0, message: "can't be blank" }
-    validates :delivery_charge_id, numericality: { other_than: 0, message: "can't be blank" }
-    validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
-    validates :delivery_duration_id, numericality: { other_than: 0, message: "can't be blank" }
+    validates :name, length: { maximum: 40, message: 'は40文字以内で入力してください' }
+    validates :description, length: { maximum: 1000, message: 'は1000文字以内で入力してください' }
+    validates :category_id, numericality: { other_than: 0, message: "を入力してください" }
+    validates :condition_id, numericality: { other_than: 0, message: "を入力してください" }
+    validates :delivery_charge_id, numericality: { other_than: 0, message: "を入力してください" }
+    validates :prefecture_id, numericality: { other_than: 0, message: "を入力してください" }
+    validates :delivery_duration_id, numericality: { other_than: 0, message: "を入力してください" }
     validates :price,
               numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999,
-                              message: 'is invalid' }
+                              message: 'は300円から9,999,999円の間で半角数字で入力してください' }
     validates :image
   end
 
