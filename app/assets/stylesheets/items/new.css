@@ -82,9 +82,13 @@
   flex-direction: row;
 }
 
+.item-image-wrapper {
+  padding-right: 5px;
+}
+
 .item-image-preview {
-  height: 150px;
-  width: 150px;
+  height: 110px;
+  width: 110px;
 }
 
 .click-upload {
